@@ -1,0 +1,37 @@
+@import "root.css";
+
+
+.sentMessage, .recievedMessage {
+    color: white;
+    height: auto;
+    min-height: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+    width: fit-content;
+    max-width: 80%;
+    border-radius: 1em;
+}
+
+.sentMessage {
+    background-color: var(--primary-color);
+    text-align: right;
+    border-bottom-right-radius: 0;
+}
+
+.recievedMessage {
+    background-color: var(--bg-over);
+    text-align: right;
+    border-bottom-left-radius: 0;
+}
+
+.recievedMessage > .message-display-name {
+    color: var(--primary-color);
+}
+
+.message-date {
+    font-size: 0.75em;
+}
+
+.message-display-name {
+    font-size: 0.8em;
+}

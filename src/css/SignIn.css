@@ -1,0 +1,25 @@
+@import "root.css";
+
+.sign-in-panel {
+    z-index: 3;
+    height: 20vh;
+    width: 25vw;
+    background-color: var(--bg-over);
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}

@@ -1,0 +1,70 @@
+@import "root.css";
+
+
+.chat-box {
+    margin-top: 2em;
+    height: 85%;
+    width: 100%;
+    background-color: #1c1e24;
+    -webkit-box-shadow: inset -1px 0px 19px -2px rgba(0,0,0,0.65);
+    -moz-box-shadow: inset -1px 0px 19px -2px rgba(0,0,0,0.65);
+    box-shadow: inset -1px 0px 19px -2px rgba(0,0,0,0.65);
+    padding: 1em;
+    position: relative;
+    display: block;
+    border-radius: 1em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    overflow-y: scroll;
+}
+
+.chat-box > .sentMessage {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.chat-box > .recievedMessage {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.message-field {
+    border-radius: 0;
+    border-bottom-left-radius: 0.5em;
+    background-color: var(--bg-color);
+    border: none;
+    height: 3em;
+}
+
+.send-btn {
+    height: 3em;
+    border-radius: 0;
+    border-bottom-right-radius: 0.5em;
+    border: none;
+    border-right: 2px solid var(--bg-color);
+    border-bottom: 2px solid var(--bg-color);
+    background-color: var(--bg-over);
+    color: var(--primary-color);
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-color);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: 3px solid var(--bg-color);
+  }

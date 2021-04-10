@@ -1,0 +1,10 @@
+:root {
+    /* The main background colour of the page */
+    --bg-color: #1c2036;
+    --bg-over: #252a47;
+    /* The primary highlight colour of the page, such as profile ring, icons and highlight text */
+    --primary-color: #f59242;
+    --secondary-color: none;
+    --font: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+    --text-color: none;
+}

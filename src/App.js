@@ -1,7 +1,9 @@
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import './css/LeftPane.css';
+import './css/RightPane.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -24,9 +26,30 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {user ? <ChatRoom auth={auth} firebase={firebase} firestore={firestore}/> : <SignInPage />}
-      </header>
+      <Row className="Header" noGutters>
+        <Col lg={8} className="left-pane">
+          <div id="background-shape"></div>
+          <div className="left-pane-data">
+            <a className="branding">Xtra Chat | FireBase & ReactJS</a>
+            {!user ? <SignInPage /> 
+            : 
+            <a>Logged In</a>}
+          </div>
+        </Col>
+        <Col lg={4} className="chat-pane">
+          <div className="chat-pane-data">
+            {user ? <ChatRoom auth={auth} firebase={firebase} firestore={firestore}/> 
+            :
+            <div className="not-signed">
+            Not Signed In
+            </div>}
+          </div>
+
+        </Col>
+      </Row>
+        
+
+
     </div>
   );
 }
@@ -39,14 +62,14 @@ export function SignInBtn() {
   }
 
   return (
-    <Button onClick={signInWithGoogle}>Sign In</Button>
+    <Button className="sign-in-btn" onClick={signInWithGoogle}>Google Login</Button>
   );
 }
 
 export function SignOutBtn() {
 
   return  auth.currentUser && (
-    <Button onClick={() => auth.signOut()}>Sign Out</Button>
+    <Button onClick={() => auth.signOut()}>Logout</Button>
   );
 }
 

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col, Form } from 'react-bootstrap';
 import { SignOutBtn } from '../../App';
 
 import ChatMessage from './ChatMessage';
+import '../../css/Chat.css';
 
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebase from 'firebase/app';
@@ -22,12 +23,15 @@ function ChatRoom(props) {
     const sendMessage = async(e) => {
         e.preventDefault();
 
-        const { uid, photoURL } = auth.currentUser;
+        console.log(auth.currentUser);
+
+        const { uid, photoURL, displayName } = auth.currentUser;
 
         await messagesRef.add({
             text: formValue,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
+            displayName,
             photoURL
         });
 
@@ -37,12 +41,25 @@ function ChatRoom(props) {
     return (
         <>
             <SignOutBtn />
-            <div>{messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth}/>)}</div>
+            <div className="chat-box">{messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth}/>)}</div>
 
-            <form onSubmit={sendMessage}>
-                <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-                <Button type="submit">Send</Button>
-            </form>
+            <Form onSubmit={sendMessage}>
+                <Row noGutters>
+                    <Col lg={10}>
+                        <Form.Control 
+                        className="message-field" 
+                        placeholder="Enter Your Message..."
+                        type="text" 
+                        value={formValue} 
+                        onChange={(e) => setFormValue(e.target.value)}/>
+                    </Col>
+                    <Col lg={2}>
+                        <Button className="send-btn" type="submit" block>Send</Button>
+                    </Col>
+                </Row>
+                
+                
+            </Form>
         </>
     );
 }

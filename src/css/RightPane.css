@@ -1,0 +1,22 @@
+@import "root.css";
+
+.chat-pane {
+    background-color: var(--bg-over);
+    height: 100%;
+    -webkit-box-shadow: -20px 0px 16px -3px rgba(0,0,0,0.22);
+    -moz-box-shadow: -20px 0px 16px -3px rgba(0,0,0,0.22);
+    box-shadow: -20px 0px 16px -3px rgba(0,0,0,0.22);
+}
+  
+.chat-pane-data {
+    padding: 2em;
+    height: 100%;
+}
+
+/* Replace black background with blurred image */
+
+.not-signed {
+    background-color: black; 
+    height: 100%;
+    width: 100%;
+}
