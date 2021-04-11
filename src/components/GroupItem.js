@@ -16,7 +16,6 @@ function Groups(props) {
     return(
         <div className="group-listing">
             <a>{name}</a>
-            <p>{limit}</p>
             <Button onClick={(e) => joinGroupChat(e)}>Join Group Chat</Button>
         </div>
     );

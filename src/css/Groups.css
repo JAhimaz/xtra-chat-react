@@ -12,6 +12,7 @@
 }
 
 .group-listing {
+    border-radius: 1em;
     height: 15em;
     width: 15em;
     background-color: var(--bg-over);

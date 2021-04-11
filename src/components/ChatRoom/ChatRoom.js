@@ -54,7 +54,7 @@ function ChatRoom(props) {
             <Row noGutters>
                 <Col lg={10}>
                     <>
-                    <p>{name} (0/{limit})</p>
+                    <p>{name}</p>
                     </>
                 </Col>
                 <Col lg={2}>
