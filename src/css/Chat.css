@@ -37,6 +37,12 @@
     height: 3em;
 }
 
+.message-field:active, .message-field:focus {
+  background-color: var(--bg-color);
+  box-shadow: none;
+  color: white;
+}
+
 .send-btn {
     height: 3em;
     border-radius: 0;
@@ -50,21 +56,37 @@
 
 /* Works on Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) var(--bg-color);
-  }
-  
-  /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: var(--bg-color);
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 20px;
-    border: 3px solid var(--bg-color);
-  }
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: 3px solid var(--bg-color);
+}
+
+.chat-loader {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-loader-spinner {
+  width: 5vh !important;
+  height: 5vh !important;
+  border: .25em solid var(--primary-color) !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}

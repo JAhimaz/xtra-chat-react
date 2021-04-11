@@ -1,0 +1,18 @@
+@import "root.css";
+
+.group-grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    overflow-y: scroll;
+    grid-row-gap: 5em;
+    margin-top: 2em;
+}
+
+.group-listing {
+    height: 15em;
+    width: 15em;
+    background-color: var(--bg-over);
+}

@@ -16,7 +16,10 @@
 /* Replace black background with blurred image */
 
 .not-signed {
-    background-color: black; 
+    background: url('../assets/images/bgblur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(0.25em);
     height: 100%;
     width: 100%;
 }
